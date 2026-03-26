@@ -1,10 +1,9 @@
+import { difference } from "next/dist/build/utils";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex">
-      <div className="bg-gray-200 w-[320px]">左邊</div>
-      <div className="bg-gray-200 w-full">右邊</div>
-    </div>
+<div></div>
   )
 }

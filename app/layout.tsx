@@ -47,20 +47,25 @@ export default function RootLayout({
           <div className="mt-2 mb-2">社群連結</div>
         </div>
 
-        <Link href="/hobby">
-          <div className="bg-gray-300 p-[16px] rounded-md">我的興趣</div>
-        </Link>
+       
         <Link href="/about">
           <div className="bg-gray-300 p-[16px] mt-2 rounded-md">關於我</div>
         </Link>
-        <div className="bg-gray-300 p-[16px] mt-2 rounded-md">設計專案</div>
-        <div className="bg-gray-300 p-[16px] mt-2 rounded-md">程式專案</div>
-
+        <Link href="/radio">
+          <div className="bg-gray-300 p-[16px] mt-2 rounded-md">廣播作品</div>
+        </Link>
+        <Link href="/ad">
+          <div className="bg-gray-300 p-[16px] mt-2 rounded-md">廣告企劃</div>
+        </Link>
+        <Link href="/digital">
+          <div className="bg-gray-300 p-[16px] mt-2 rounded-md">數位專案</div>
+        </Link>
+        
 
       </div>
 
 
-      <div className="bg-gray-200 w-full h-screen p-4 ">右邊  {children}
+      <div className="bg-gray-200 w-full h-screen p-4 "> {children}
       </div>
     </div>
 

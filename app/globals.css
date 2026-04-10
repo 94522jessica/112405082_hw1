@@ -1,1 +1,34 @@
 @import "tailwindcss";
+@layer utilities {
+    /* 定義星星漂浮的動畫 */
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0) translateX(0);
+      }
+      25% {
+        transform: translateY(-10px) translateX(5px);
+      }
+      50% {
+        transform: translateY(5px) translateX(-10px);
+      }
+      75% {
+        transform: translateY(-5px) translateX(10px);
+      }
+    }
+  
+    /* 定義星星旋轉的動畫 */
+    @keyframes star-rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  
+    /* 應用漂浮動畫的類別 */
+    .animate-float {
+      animation: float 6s ease-in-out infinite;
+    }
+  
+    /* 應用旋轉動畫的類別 (用在星星圖示本身) */
+    .animate-star-rotate {
+      animation: star-rotate 10s linear infinite;
+    }
+  }

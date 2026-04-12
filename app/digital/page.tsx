@@ -72,7 +72,7 @@ export default function DigitalPage() {
 
                 {/* 下半部：文字說明 [cite: 111] */}
                 <div className="p-12 text-white border-t-2 border-white/10">
-                  <h2 className="text-4xl font-black mb-6 ">Remindish - 冰箱食材管理App</h2>
+                  <h2 className="text-4xl font-black mb-6 hover:text-[#a3c6ff] transition-colors ">Remindish - 冰箱食材管理App</h2>
                   <div className="space-y-6 text-xl leading-relaxed">
                     <p className="opacity-95">
                       本專案聚焦現代逐年增加的獨居青年和小家庭，希望解決他們應生活忙碌不常煮飯或忘記冰箱食材效期，導致食材浪費的痛點 。 App四大功能：冰箱食材管理、智慧食譜推薦、線上食材預定、差一項購物清單，提供一條龍服務 。
@@ -114,7 +114,7 @@ export default function DigitalPage() {
 
                 {/* 下半部：文字說明 [cite: 113] */}
                 <div className="p-12 text-white border-t-2 border-white/10">
-                  <h2 className="text-4xl font-black mb-6 ">汪汪聯絡簿 - 寵物照顧檔案App</h2>
+                  <h2 className="text-4xl font-black mb-6 hover:text-[#a3c6ff] transition-colors">汪汪聯絡簿 - 寵物照顧檔案App</h2>
                   <div className="space-y-6 text-xl leading-relaxed">
                     <p className="opacity-95">
                       本專案聚焦狗狗飼主與臨時照顧者，解決臨時委託照顧時資訊不對等、溝通效率不佳的問題，設計了系統化的寵物檔案建立與照顧回報模組。

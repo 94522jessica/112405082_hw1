@@ -3,11 +3,16 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 
+// 調整後的標題特效：
+// 手機版 (預設)：文字設為藍色 #1f62a8，移除外框與所有陰影
+// 電腦版 (md:)：切換為白色文字，補回 2px 藍色外框、4px 硬陰影與光暈
 const textOutlineStyle = `
-  text-3xl md:text-5xl font-black text-white 
-  [-webkit-text-stroke:0px_#1f62a8] md:[-webkit-text-stroke:2px_#1f62a8] 
+  text-3xl md:text-5xl font-black italic leading-tight
+  text-[#1f62a8] [-webkit-text-stroke:0px] [text-shadow:none] drop-shadow-none
+  md:text-white md:[-webkit-text-stroke:2px_#1f62a8] 
   md:[text-shadow:4px_4px_0px_#1f62a8] 
-  drop-shadow-lg
+  md:drop-shadow-[0_0_15px_rgba(31,98,168,0.5)]
+  transition-all duration-500
 `;
 
 export default function RadioPage() {
@@ -44,7 +49,7 @@ export default function RadioPage() {
       {/* --- 作品 1: 專題新聞 (寬版) --- */}
       <section className="flex flex-col gap-6">
         <div className="bg-[#1f62a8] text-white p-6 md:p-10 rounded-[2rem] md:rounded-[2.5rem] shadow-xl">
-          <h2 className="text-2xl md:text-3xl font-black mb-4 hover:text-[#a3c6ff] transition-colors leading-tight">1. 農田與野生動物共存的平衡點 台灣猴害如何防治</h2>
+          <h2 className="text-2xl md:text-3xl font-black mb-4 ">1. 農田與野生動物共存的平衡點 台灣猴害如何防治</h2>
           <p className="text-base md:text-lg font-bold opacity-80 mb-2">2024 | 政大之聲克斯托盃最佳個人專題新聞</p>
           <p className="text-sm md:text-md font-medium mb-4">
             新聞連結：
@@ -89,7 +94,7 @@ export default function RadioPage() {
           id: 3, 
           title: "顫慄童話夜", 
           time: "2025 | 政大之聲廣播節目", 
-          desc: "一檔雙人主持、和暗黑童話有關的資訊性節目。我是主持人「說說」~企劃發想執行，和我的夥伴「講講」一起。",
+          desc: "一檔雙人主持、和暗黑童話有關的資訊性節目。我是主持人「說說」~ 企劃發想執行，和我的夥伴「講講」一起。",
           imgs: ["/1141story1.png", "/1141story2.png"] 
         },
         { 
@@ -126,7 +131,7 @@ export default function RadioPage() {
           <h2 className="text-2xl md:text-3xl font-black mb-2 md:mb-4">5. 回家 ，不回家</h2>
           <p className="text-sm md:text-lg font-bold opacity-80 mb-4">2025 | 政大之聲聲音創作展 - 分聲 - 展品</p>
           <p className="text-lg md:text-xl font-medium leading-relaxed opacity-90">
-            這是廣播劇作品。作品呈現在面對家的矛盾型態時---溫暖、爭吵；關心、控制，選擇回家或不回家後的心境。
+            這是我在擔任二級助理時製作的廣播劇作品。作品呈現在面對家的矛盾型態時---溫暖、爭吵；關心、控制，選擇回家或不回家後的心境。
           </p>
         </div>
         <div 

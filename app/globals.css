@@ -32,3 +32,60 @@
       animation: star-rotate 10s linear infinite;
     }
   }
+
+/* 以下是開場動畫 */
+
+  @layer utilities {
+    /* 緩慢浮動與呼吸燈特效 */
+    .animate-float-glow {
+      animation: float 5s ease-in-out infinite, glow 3s ease-in-out infinite;
+    }
+  
+    @keyframes float {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-10px) scale(1.05); }
+    }
+  
+    @keyframes glow {
+      0%, 100% { opacity: 0.7; }
+      50% { opacity: 1; filter: brightness(1.1); }
+    }
+  
+    /* 旋轉速度 (大顆轉慢，小顆轉快) */
+    .spin-slow {
+      animation: spin 8s linear infinite;
+    }
+    .spin-normal {
+      animation: spin 5s linear infinite;
+    }
+    .spin-fast {
+      animation: spin 3s linear infinite;
+    }
+  
+    /* 線條生長動畫 */
+    .animate-width-grow {
+      animation: grow 1.5s ease-out forwards;
+      animation-delay: 1.2s;
+    }
+  
+    @keyframes grow {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+  
+    /* 整個頁面優雅滑入 */
+    .animate-fade-in-up {
+      animation: fadeInUp 1s ease-out forwards;
+    }
+  
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }

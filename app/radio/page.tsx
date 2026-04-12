@@ -4,9 +4,9 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 
 const textOutlineStyle = `
-  text-3xl md:text-5xl font-black italic text-white 
-  [-webkit-text-stroke:1px_#1f62a8] md:[-webkit-text-stroke:2px_#1f62a8] 
-  [text-shadow:2px_2px_0px_#1f62a8] md:[text-shadow:4px_4px_0px_#1f62a8] 
+  text-3xl md:text-5xl font-black text-white 
+  [-webkit-text-stroke:0px_#1f62a8] md:[-webkit-text-stroke:2px_#1f62a8] 
+  md:[text-shadow:4px_4px_0px_#1f62a8] 
   drop-shadow-lg
 `;
 

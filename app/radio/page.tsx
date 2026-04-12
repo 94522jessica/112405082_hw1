@@ -2,8 +2,12 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 
-// 沿用 About 頁面的標題特效
-const textOutlineStyle = "text-5xl font-black italic text-white [-webkit-text-stroke:2px_#1f62a8] [text-shadow:4px_4px_0px_#1f62a8,0_0_15px_rgba(31,98,168,0.5)] drop-shadow-2xl";
+const textOutlineStyle = `
+  text-3xl md:text-5xl font-black italic text-white 
+  [-webkit-text-stroke:1px_#1f62a8] md:[-webkit-text-stroke:2px_#1f62a8] 
+  [text-shadow:2px_2px_0px_#1f62a8] md:[text-shadow:4px_4px_0px_#1f62a8] 
+  drop-shadow-lg
+`;
 
 export default function RadioPage() {
   // 3. 定義一個狀態變數，用來儲存當前被點擊放大的圖片路徑

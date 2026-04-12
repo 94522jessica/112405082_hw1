@@ -2,9 +2,12 @@ import Image from "next/image";
 import Menu from "../../component/Menu";
 import { MoveRight } from "lucide-react";
 
-// 標題特效：超粗白字 + 深藍外框 + 加強陰影 (PDF 風格)
-const textOutlineStyle = "text-5xl font-black italic text-white [-webkit-text-stroke:2px_#1f62a8] [text-shadow:4px_4px_0px_#1f62a8,0_0_15px_rgba(31,98,168,0.5)] drop-shadow-2xl";
-
+const textOutlineStyle = `
+  text-3xl md:text-5xl font-black italic text-white 
+  [-webkit-text-stroke:1px_#1f62a8] md:[-webkit-text-stroke:2px_#1f62a8] 
+  [text-shadow:2px_2px_0px_#1f62a8] md:[text-shadow:4px_4px_0px_#1f62a8] 
+  drop-shadow-lg
+`;
 // 1. 調整星星位置：分散於上方紅圈區域，大小各異
 const starTraits = [
   { text: "ENFP", top: "10%", left: "22%", size: "w-45 h-45", delay: "0s" },

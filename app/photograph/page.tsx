@@ -46,7 +46,7 @@ export default function PhotographPage() {
 
           {/* 3. 第一組圖 (me1, me2) + 圖說 */}
           <InlineGallery 
-            images={["/me2.JPG", "/me1.JPG"]} 
+            images={["/me2.jpg", "/me1.jpg"]} 
             onImageClick={setSelectedImage}
             caption="「驚 ! 國內一個月，就有13萬人曾認真想過自殺 !?」...你不是一個人，我們都是這樣活著的。 "
           />
@@ -59,14 +59,14 @@ export default function PhotographPage() {
 
           {/* 5. 第二組圖 (me8) + 圖說 */}
           <InlineGallery 
-            images={["/me8.JPG"]} 
+            images={["/me8.jpg"]} 
             onImageClick={setSelectedImage}
             caption="「快節奏的城市裡...我總會忍不住想，要是就這樣被淹沒….」 "
           />
 
           {/* 6. 第三組圖 (me3, me4, me5) + 圖說 */}
           <InlineGallery 
-            images={["/me3.JPG", "/me4.JPG", "/me5.JPG"]} 
+            images={["/me3.jpg", "/me4.jpg", "/me5.jpg"]} 
             onImageClick={setSelectedImage}
             caption="「我想埋葬自己的模樣，活成其他人喜歡的形狀」 "
           />
@@ -79,14 +79,14 @@ export default function PhotographPage() {
 
           {/* 8. 第四組圖 (me6, me7) + 圖說 */}
           <InlineGallery 
-            images={["/me6.JPG", "/me7.JPG"]} 
+            images={["/me6.jpg", "/me7.jpg"]} 
             onImageClick={setSelectedImage}
             caption="「那些我賴以維生的，令我窒息」 "
           />
 
           {/* 9. 第五組圖 (me11) + 圖說 */}
           <InlineGallery 
-            images={["/me11.JPG"]} 
+            images={["/me11.jpg"]} 
             onImageClick={setSelectedImage}
             caption="「社群平台上，展示著他人光鮮亮麗的精采人生，我好像從出生起就輸了」 "
           />
@@ -97,7 +97,7 @@ export default function PhotographPage() {
 
           {/* 10. 第六組圖 (me9, me10) + 圖說 */}
           <InlineGallery 
-            images={["/me9.JPG", "/me10.JPG"]} 
+            images={["/me9.jpg", "/me10.jpg"]} 
             onImageClick={setSelectedImage}
             caption="「夠了。他們根本不了解。他們恣意在你身上貼標籤；他們只看得見他們想看見的」 "
           />
@@ -111,7 +111,7 @@ export default function PhotographPage() {
 
           {/* 12. 第七組圖 (me12, me13) + 圖說 */}
           <InlineGallery 
-            images={["/me12.JPG", "/me13.JPG"]} 
+            images={["/me12.jpg", "/me13.jpg"]} 
             onImageClick={setSelectedImage}
             caption="「我對未來感到迷惘，對自己感到失望」 "
           />
@@ -126,7 +126,7 @@ export default function PhotographPage() {
 
           {/* 14. 第八組圖 (me14) + 圖說 */}
           <InlineGallery 
-            images={["/me14.JPG"]} 
+            images={["/me14.jpg"]} 
             onImageClick={setSelectedImage}
             caption="「成『枷』立業」 "
           />
@@ -144,7 +144,7 @@ export default function PhotographPage() {
 
           {/* 16. 最終圖 (me15) + 圖說 */}
           <InlineGallery 
-            images={["/me15.JPG"]} 
+            images={["/me15.jpg"]} 
             onImageClick={setSelectedImage}
             caption="「終究是一個人來，一個人走」 "
           />

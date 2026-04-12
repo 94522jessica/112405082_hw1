@@ -5,7 +5,7 @@ import { MoveRight } from "lucide-react";
 // 1. 動態文字外框：手機版變細 (1px)，電腦版維持 (2px)
 const textOutlineStyle = `
   text-3xl md:text-5xl font-black italic text-white 
-  [-webkit-text-stroke:1px_#1f62a8] md:[-webkit-text-stroke:2px_#1f62a8] 
+  [-webkit-text-stroke:0px_#1f62a8] md:[-webkit-text-stroke:2px_#1f62a8] 
    md:[text-shadow:4px_4px_0px_#1f62a8] 
   drop-shadow-lg leading-tight
 `;

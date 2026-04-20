@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { ChevronRight, ChevronLeft } from "lucide-react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 // 標題與日期特效 (對標虎牌啤酒與猴害新聞風格)
 const titleStyle = "text-4xl font-black mb-8"; 
@@ -11,6 +12,7 @@ const textOutlineStyle = "text-5xl font-black italic text-white [-webkit-text-st
 
 export default function PhotographPage() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [isPhotoProjectOpen, setIsPhotoProjectOpen] = useState(false);
 
   // ESC 鍵關閉放大視窗
   useEffect(() => {
@@ -26,7 +28,16 @@ export default function PhotographPage() {
       <main className="max-w-5xl mx-auto w-full bg-[#1f62a8] rounded-[3.5rem] shadow-2xl border-4 border-white/10 overflow-hidden">
         
         <article className="p-12 text-white space-y-12">
-          
+        <button 
+          onClick={() => setIsPhotoProjectOpen(!isPhotoProjectOpen)}
+          className="absolute top-8 right-8 md:top-12 md:right-12 z-50 p-2 hover:bg-white/10 rounded-full transition-all duration-300"
+          aria-label="切換展開收起"
+        >
+          <ChevronDown 
+            size={32} 
+            className={`transition-transform duration-500 ${isPhotoProjectOpen ? "rotate-180" : "rotate-0"}`} 
+          />
+        </button>
           {/* 1. 標題與日期 */}
           <header className="mb-14">
             <h2 className={titleStyle}>
@@ -44,6 +55,9 @@ export default function PhotographPage() {
             {"\n\n"}快節奏的城市裡，來往的汽車、嘈雜的人聲，日復一日迴旋反覆 
           </p>
 
+
+
+
           {/* 3. 第一組圖 (me1, me2) + 圖說 */}
           <InlineGallery 
             images={["/me2.jpg", "/me1.jpg"]} 
@@ -51,6 +65,8 @@ export default function PhotographPage() {
             caption="「驚 ! 國內一個月，就有13萬人曾認真想過自殺 !?」...你不是一個人，我們都是這樣活著的。 "
           />
 
+      {isPhotoProjectOpen && (
+        <div className="space-y-12 pt-8 animate-in slide-in-from-top-5 duration-500">
           {/* 4. 第二段敘述 */}
           <p className="whitespace-pre-line text-xl leading-relaxed font-medium opacity-90 tracking-wide">
             我很清楚，我不屬於這裡
@@ -148,8 +164,20 @@ export default function PhotographPage() {
             onImageClick={setSelectedImage}
             caption="「終究是一個人來，一個人走」 "
           />
+          <div 
+                  className="w-full flex justify-center pt-10 cursor-pointer opacity-30 hover:opacity-100 transition-opacity"
+                  onClick={() => {
+                    setIsPhotoProjectOpen(false);
+                    // 如果要收起時自動彈回專案頂部，可以解開下一行
+                    // window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                >
+                  <ChevronUp size={40} />
+                </div>
 
-        </article>
+              </div>
+            )}
+          </article>
       </main>
 
       {/* 圖片放大 Modal */}

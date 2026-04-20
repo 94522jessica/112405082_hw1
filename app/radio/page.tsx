@@ -9,9 +9,10 @@ import { useState, useEffect } from "react";
 const textOutlineStyle = `
   text-3xl md:text-5xl font-black italic leading-tight
   text-[#1f62a8] [-webkit-text-stroke:0px] [text-shadow:none] drop-shadow-none
-  md:text-white md:[-webkit-text-stroke:2px_#1f62a8] 
+  md:text-white
+  md:[-webkit-text-stroke:2px_#1f62a8] 
   md:[text-shadow:4px_4px_0px_#1f62a8] 
-  md:drop-shadow-[0_0_15px_rgba(31,98,168,0.5)]
+  md:drop-shadow-lg
   transition-all duration-500
 `;
 
@@ -42,7 +43,7 @@ export default function RadioPage() {
     <div className="flex flex-col gap-8 md:gap-12 animate-in fade-in duration-1000 pb-10 relative">
       
       {/* 頁面大標題 */}
-      <header className="w-full flex justify-start px-2 pt-4 transition-transform hover:-translate-y-1">
+      <header className="w-full flex justify-start px-2 md:px-6 pt-4 md:pt-6 relative z-30 transition-transform hover:-translate-y-1">
         <h1 className={textOutlineStyle}>政大之聲實習廣播電台</h1>
       </header>
 
@@ -88,6 +89,8 @@ export default function RadioPage() {
           title: "時尚珍珠音調", 
           time: "2025 | 政大之聲廣播節目", 
           desc: "我是主持人露亞，從企劃發想到執行，每週都會和夥伴一起剪音檔、寫 Rundown。",
+
+          audioSrc: "/audio/melody.mp3",
           imgs: ["/1132melody1.png", "/1132melody2.png"] 
         },
         { 
@@ -95,6 +98,8 @@ export default function RadioPage() {
           title: "顫慄童話夜", 
           time: "2025 | 政大之聲廣播節目", 
           desc: "一檔雙人主持、和暗黑童話有關的資訊性節目。我是主持人「說說」~ 企劃發想執行，和我的夥伴「講講」一起。",
+
+          audioSrc: "/audio/story.mp3",
           imgs: ["/1141story1.png", "/1141story2.png"] 
         },
         { 
@@ -102,6 +107,8 @@ export default function RadioPage() {
           title: "給我一首歌的時間", 
           time: "2026 | 政大之聲廣播節目", 
           desc: "一檔單人主持、和沉澱情緒有關的音樂網節目。我是主持人「西卡」~ 這是我第一個完成的單人節目。",
+
+          audioSrc: "/audio/music.mp3",
           imgs: ["/1142music1.png", "/1142music2.png"] 
         }
       ].map((proj) => (
@@ -110,6 +117,14 @@ export default function RadioPage() {
             <h2 className="text-2xl md:text-3xl font-black mb-2 md:mb-4">{proj.id}. {proj.title}</h2>
             <p className="text-sm md:text-lg font-bold opacity-80 mb-4">{proj.time}</p>
             <p className="text-lg md:text-xl font-medium leading-relaxed opacity-90">{proj.desc}</p>
+            {/* 新增音檔播放器 */}
+            <div className="w-full mt-2">
+              <p className="text-xs font-bold mb-2 opacity-70">🎧 節目片段：</p>
+              <audio controls className="w-full h-10 custom-audio-player">
+                <source src={proj.audioSrc} type="audio/mpeg" />
+                您的瀏覽器不支持音訊播放。
+              </audio>
+            </div>
           </div>
           <div className="flex flex-row md:flex-1 gap-4 h-40 md:h-auto">
             {proj.imgs.map((src, idx) => (
@@ -133,7 +148,27 @@ export default function RadioPage() {
           <p className="text-lg md:text-xl font-medium leading-relaxed opacity-90">
             這是我在擔任二級助理時製作的廣播劇作品。作品呈現在面對家的矛盾型態時---溫暖、爭吵；關心、控制，選擇回家或不回家後的心境。
           </p>
+          {/* 雙音檔播放區 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+            {/* 音檔 1: 回家 */}
+            <div className="w-full">
+              <p className="text-xs font-bold mb-2 opacity-70">🎧 回家：</p>
+              <audio controls className="w-full h-10 custom-audio-player">
+                <source src="/audio/home_yes.mp3" type="audio/mpeg" />
+                您的瀏覽器不支持音訊播放。
+              </audio>
+            </div>
+                      
+          {/* 音檔 2: 不回家 */}
+          <div className="w-full">
+            <p className="text-xs font-bold mb-2 opacity-70">🎧 不回家：</p>
+            <audio controls className="w-full h-10 custom-audio-player">
+              <source src="/audio/home_no.mp3" type="audio/mpeg" />
+               您的瀏覽器不支持音訊播放。
+            </audio>
+          </div>
         </div>
+      </div>
         <div 
           className="flex-[2] relative h-64 md:h-auto rounded-[2rem] overflow-hidden shadow-lg border-4 border-white/20 cursor-pointer group transition-all"
           onClick={() => setSelectedImage("/home2.png")}

@@ -155,7 +155,7 @@ export default function AboutPage() {
         <div className="bg-[#1f62a8] text-white p-10 rounded-[3rem] shadow-xl flex items-center gap-10">
           <h3 className="text-3xl font-black whitespace-nowrap">檢定證書</h3>
           <div className="flex gap-6 flex-wrap">
-            {["TOEIC 870", "TOEFL 76", "GEPT 中高級"].map(cert => (
+            {["TOEIC 870", "TOEFL 76", "GEPT 中級複試"].map(cert => (
               <span key={cert} className="bg-white text-[#1f62a8] px-8 py-3 rounded-full text-xl font-black shadow-lg transition-all hover:scale-110 hover:bg-[#a3c6ff]">
                 {cert}
               </span>
@@ -182,7 +182,7 @@ export default function AboutPage() {
               ].map((item, idx) => (
                 <div key={idx} className="bg-[#1f62a8] text-white p-6 md:p-10 rounded-[2.5rem] md:rounded-[3.5rem] shadow-xl space-y-4 transition-all duration-300 hover:bg-[#1a5592] hover:scale-[1.01]">
                   <div className="flex flex-col md:flex-row justify-between md:items-center border-b-2 border-white/20 pb-3">
-                    <h3 className="text-xl md:text-3xl font-black italic">校內背景 - {item.title}</h3>
+                    <h3 className="text-xl md:text-3xl font-black italic">校內創作背景 - {item.title}</h3>
                     <span className="text-sm md:text-xl font-black italic opacity-80">{item.time}</span>
                   </div>
                   {/* 使用 whitespace-pre-line 確保換行正確顯示 */}
